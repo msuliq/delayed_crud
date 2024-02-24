@@ -18,23 +18,22 @@ This gem provides three convenient methods for common CRUD operations, each acce
 ### delayed_create
 The `delayed_create` method can be used on a model instance and accepts instance attributes in a hash along with a timer argument.
 
-```
+```ruby
   Customer.delayed_create({ status: :new }, in: 10.minutes.from_now)
 ```
 
 ### delayed_update
 The `delayed_update` method works on an existing record and accepts update attributes in a hash along with a timer argument.
 
-```
+```ruby
   HeatedDiscussion.delayed_update({ frozen: false }, after: 24.hours)
 ```
 
 ### delayed_destroy
 The `delayed_destroy` method can be used on an existing record and accepts only a timer argument. The record will be destroyed once the timer expires.
 
-```
+```ruby
 TrialAccount.delayed_destroy(in: 1.week.from_now)
-
 ```
 
 ## Contributing
